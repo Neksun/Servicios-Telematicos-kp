@@ -1,0 +1,13 @@
+vagrant@server2:~$ sudo cat /etc/bind/named.conf.local
+
+zone "ejercicio.com" {
+    type slave;
+    file "/var/lib/bind/db.ejercicio.com";
+    masters { 192.168.50.4; };
+};
+
+zone "50.168.192.in-addr.arpa" {
+    type slave;
+    file "/var/lib/bind/db.192";
+    masters { 192.168.50.4; };
+};

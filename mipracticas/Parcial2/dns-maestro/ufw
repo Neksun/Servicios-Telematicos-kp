@@ -1,0 +1,22 @@
+vagrant@servidor3:/etc/bind$ sudo ufw status verbose
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), deny (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+53                         ALLOW IN    192.168.50.2
+53                         ALLOW IN    192.168.50.3
+22/tcp                     ALLOW IN    Anywhere
+53/udp                     ALLOW IN    192.168.50.3
+53/tcp                     ALLOW IN    192.168.50.3
+53/udp                     ALLOW IN    192.168.50.2
+53/tcp                     ALLOW IN    192.168.50.2
+53/udp                     DENY IN     Anywhere
+53/tcp                     DENY IN     Anywhere
+22/tcp (v6)                ALLOW IN    Anywhere (v6)
+53/udp (v6)                DENY IN     Anywhere (v6)
+53/tcp (v6)                DENY IN     Anywhere (v6)
+
+vagrant@servidor3:/etc/bind$ sudo systemctl stop bind9

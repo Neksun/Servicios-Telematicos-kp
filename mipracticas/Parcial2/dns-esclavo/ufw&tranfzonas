@@ -1,0 +1,30 @@
+vagrant@server2:~$ sudo ufw status verbose
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW IN    Anywhere
+53/udp                     ALLOW IN    192.168.50.3
+53/tcp                     ALLOW IN    192.168.50.3
+53/udp                     ALLOW IN    192.168.50.4
+53/tcp                     ALLOW IN    192.168.50.4
+53/udp                     DENY IN     Anywhere
+53/tcp                     DENY IN     Anywhere
+80/tcp                     ALLOW IN    192.168.50.3
+21/tcp                     ALLOW IN    192.168.50.3
+990/tcp                    ALLOW IN    192.168.50.3
+40000:40100/tcp            ALLOW IN    192.168.50.3
+22/tcp (v6)                ALLOW IN    Anywhere (v6)
+53/udp (v6)                DENY IN     Anywhere (v6)
+53/tcp (v6)                DENY IN     Anywhere (v6)
+
+vagrant@server2:~$ ls -la /var/lib/bind/
+total 16
+drwxrwxr-x  2 root bind 4096 Sep 29 16:39 .
+drwxr-xr-x 41 root root 4096 Sep 29 20:26 ..
+-rw-r--r--  1 bind bind  396 Sep 30 20:42 db.192
+-rw-r--r--  1 bind bind  378 Sep 29 16:39 db.ejercicio.com
+vagrant@server2:~$
